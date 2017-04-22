@@ -1,7 +1,7 @@
 IDIR =../include
 CC=g++
 EXT = c
-CFLAGS=-ftest-coverage -fprofile-arcs-I $(IDIR) -Wall
+CFLAGS=-ftest-coverage -fprofile-arcs -I $(IDIR) -Wall
 
 ODIR=obj
 LDIR =../lib

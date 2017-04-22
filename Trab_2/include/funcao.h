@@ -1,4 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include"funcao.c"
 
-int converte_romano(char *romano); /*retorna um numero inteiro correspondente ao seu equivalente romano*/ 
+int converte_romano(const char romano[]); /**retorna um numero inteiro correspondente ao seu equivalente romano*/ 

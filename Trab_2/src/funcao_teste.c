@@ -3,6 +3,28 @@
 #include"funcao.c"
 #include<gtest/gtest.h>
 
+TEST(converte,excessoes){/**/
+	EXPECT_EQ(-1,converte_romano("ABDE"));
+	EXPECT_EQ(-1,converte_romano("FGHJ"));
+	EXPECT_EQ(-1,converte_romano("KNOP"));
+	EXPECT_EQ(-1,converte_romano("QRST"));
+	EXPECT_EQ(-1,converte_romano("UWXYZ"));
+	EXPECT_EQ(-1,converte_romano("ROGE"));
+	EXPECT_EQ(-1,converte_romano("BEBA"));
+	EXPECT_EQ(-1,converte_romano("BUNBA"));
+}
+
+TEST(converte,numeros_errados){
+	EXPECT_EQ(-1,converte_romano("XXXIXIX"));
+	EXPECT_EQ(-1,converte_romano("MXIMXI"));
+	EXPECT_EQ(-1,converte_romano("XMICMCIX"));
+	EXPECT_EQ(-1,converte_romano("MLXMCD"));
+	EXPECT_EQ(-1,converte_romano("MXLMXCIIV"));
+	EXPECT_EQ(-1,converte_romano("MIXMIMLCV"));
+	EXPECT_EQ(-1,converte_romano("IIIXMCC"));
+	EXPECT_EQ(-1,converte_romano("MCMLMC"));
+}
+
 TEST(converte,unidades){
 	EXPECT_EQ(1,converte_romano("I"));
 	EXPECT_EQ(2,converte_romano("II"));
