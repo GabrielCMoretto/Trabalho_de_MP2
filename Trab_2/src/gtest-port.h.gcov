@@ -1,7 +1,7 @@
         -:    0:Source:/usr/include/gtest/internal/gtest-port.h
         -:    0:Graph:obj/funcao_teste.gcno
         -:    0:Data:obj/funcao_teste.gcda
-        -:    0:Runs:1
+        -:    0:Runs:2
         -:    0:Programs:1
         -:    1:// Copyright 2005, Google Inc.
         -:    2:// All rights reserved.
@@ -900,11 +900,11 @@
         -:  895:  typedef T element_type;
         -:  896:
         -:  897:  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}
-      171:  898:  ~scoped_ptr() { reset(); }
+      328:  898:  ~scoped_ptr() { reset(); }
         -:  899:
         -:  900:  T& operator*() const { return *ptr_; }
-       16:  901:  T* operator->() const { return ptr_; }
-       24:  902:  T* get() const { return ptr_; }
+       28:  901:  T* operator->() const { return ptr_; }
+       42:  902:  T* get() const { return ptr_; }
         -:  903:
         -:  904:  T* release() {
         -:  905:    T* const ptr = ptr_;
@@ -912,14 +912,14 @@
         -:  907:    return ptr;
         -:  908:  }
         -:  909:
-      179:  910:  void reset(T* p = NULL) {
-      179:  911:    if (p != ptr_) {
-      121:  912:      if (IsTrue(sizeof(T) > 0)) {  // Makes sure T is a complete type.
-      121:  913:        delete ptr_;
+      342:  910:  void reset(T* p = NULL) {
+      342:  911:    if (p != ptr_) {
+      224:  912:      if (IsTrue(sizeof(T) > 0)) {  // Makes sure T is a complete type.
+      224:  913:        delete ptr_;
         -:  914:      }
-      121:  915:      ptr_ = p;
+      224:  915:      ptr_ = p;
         -:  916:    }
-      179:  917:  }
+      342:  917:  }
         -:  918:
         -:  919: private:
         -:  920:  T* ptr_;

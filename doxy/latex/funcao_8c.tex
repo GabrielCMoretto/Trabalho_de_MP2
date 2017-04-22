@@ -2,11 +2,11 @@
 \label{funcao_8c}\index{/home/gabriel/\+Documents/\+U\+N\+B\+\_\+\+Linux/\+Trabalho\+\_\+2/\+Trab\+\_\+2/src/funcao.\+c@{/home/gabriel/\+Documents/\+U\+N\+B\+\_\+\+Linux/\+Trabalho\+\_\+2/\+Trab\+\_\+2/src/funcao.\+c}}
 
 
-esse arquivo faz nada  
+esse arquivo contém a implementação da função.  
 
 
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
-{\ttfamily \#include \char`\"{}funcao.\+h\char`\"{}}\\*
 {\ttfamily \#include $<$string.\+h$>$}\\*
 Include dependency graph for funcao.\+c\+:
 % FIG 0
@@ -15,33 +15,59 @@ This graph shows which files directly or indirectly include this file\+:
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{funcao_8c_aeabb22e7e2bb71f27afc09745f61149f}{converte\+\_\+romano} (char $\ast$romano)
-\begin{DoxyCompactList}\small\item\em Faz varios nada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \hyperlink{funcao_8c_a7674f764c2babd495a6dfc8fa10756d8}{compara} (int numero, int ultimo, int ultimo\+\_\+numero)
+\begin{DoxyCompactList}\small\item\em Compara dois números baseados nos caractéres romanos e compara para fazer uma operação satisfatória. \end{DoxyCompactList}\item 
+int \hyperlink{funcao_8c_a437108d79d6fa240ff23d5b4b029c98c}{converte\+\_\+romano} (const char romano\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Retorna um inteiro baseado em um número romano. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-esse arquivo faz nada 
+esse arquivo contém a implementação da função. 
 
 
 
 \subsection{Function Documentation}
-\index{funcao.\+c@{funcao.\+c}!converte\+\_\+romano@{converte\+\_\+romano}}
-\index{converte\+\_\+romano@{converte\+\_\+romano}!funcao.\+c@{funcao.\+c}}
-\subsubsection[{\texorpdfstring{converte\+\_\+romano(char $\ast$romano)}{converte_romano(char *romano)}}]{\setlength{\rightskip}{0pt plus 5cm}int converte\+\_\+romano (
+\index{funcao.\+c@{funcao.\+c}!compara@{compara}}
+\index{compara@{compara}!funcao.\+c@{funcao.\+c}}
+\subsubsection[{\texorpdfstring{compara(int numero, int ultimo, int ultimo\+\_\+numero)}{compara(int numero, int ultimo, int ultimo_numero)}}]{\setlength{\rightskip}{0pt plus 5cm}int compara (
 \begin{DoxyParamCaption}
-\item[{char $\ast$}]{romano}
+\item[{int}]{numero, }
+\item[{int}]{ultimo, }
+\item[{int}]{ultimo\+\_\+numero}
 \end{DoxyParamCaption}
-)}\hypertarget{funcao_8c_aeabb22e7e2bb71f27afc09745f61149f}{}\label{funcao_8c_aeabb22e7e2bb71f27afc09745f61149f}
+)}\hypertarget{funcao_8c_a7674f764c2babd495a6dfc8fa10756d8}{}\label{funcao_8c_a7674f764c2babd495a6dfc8fa10756d8}
 
 
-Faz varios nada. 
+Compara dois números baseados nos caractéres romanos e compara para fazer uma operação satisfatória. 
 
-Especificamente, retornar 0, que eh nada. 
+Função auxiliar de converte\+\_\+romano.
+
+Falta ainda implementar mais excessões para o código, porém o tempo é curto. 
 \begin{DoxyParams}{Parameters}
-{\em romano} & uma string qualquer que faz nada. \\
+{\em um} & número que vai ser analisado, o seu antecessor na string, e número adquirido anteriormente por essa função. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-um inteiro que significa nada 
+um inteiro que satisfaz a operação da combinação de dois números. 
 \end{DoxyReturn}
-$<$Faz algo, eu acho 
+\index{funcao.\+c@{funcao.\+c}!converte\+\_\+romano@{converte\+\_\+romano}}
+\index{converte\+\_\+romano@{converte\+\_\+romano}!funcao.\+c@{funcao.\+c}}
+\subsubsection[{\texorpdfstring{converte\+\_\+romano(const char romano[])}{converte_romano(const char romano[])}}]{\setlength{\rightskip}{0pt plus 5cm}int converte\+\_\+romano (
+\begin{DoxyParamCaption}
+\item[{const char}]{romano\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{funcao_8c_a437108d79d6fa240ff23d5b4b029c98c}{}\label{funcao_8c_a437108d79d6fa240ff23d5b4b029c98c}
+
+
+Retorna um inteiro baseado em um número romano. 
+
+Função primária para a conversão.
+
+O algoritmo lê a string de trás para frente e identifica a letra, depois, ele chama a função compara para fazer uma operação satisfatória em como se lê os números romanos. Ele também identifica se há uma letra diferente das aceitas, nesse caso, a função retorna -\/1. A função também retorna -\/1 caso o número seja maior que 3000 ou menor que zero. 
+\begin{DoxyParams}{Parameters}
+{\em uma} & string qualquer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+um inteiro equivalente em romano. 
+\end{DoxyReturn}

@@ -1,7 +1,7 @@
         -:    0:Source:/usr/include/gtest/internal/gtest-internal.h
         -:    0:Graph:obj/funcao_teste.gcno
         -:    0:Data:obj/funcao_teste.gcda
-        -:    0:Runs:1
+        -:    0:Runs:2
         -:    0:Programs:1
         -:    1:// Copyright 2005, Google Inc.
         -:    2:// All rights reserved.
@@ -445,7 +445,7 @@
         -:  440:  virtual Test* CreateTest() = 0;
         -:  441:
         -:  442: protected:
-        7:  443:  TestFactoryBase() {}
+       14:  443:  TestFactoryBase() {}
         -:  444:
         -:  445: private:
         -:  446:  GTEST_DISALLOW_COPY_AND_ASSIGN_(TestFactoryBase);
@@ -454,9 +454,9 @@
         -:  449:// This class provides implementation of TeastFactoryBase interface.
         -:  450:// It is used in TEST and TEST_F macros.
         -:  451:template <class TestClass>
-        7:  452:class TestFactoryImpl : public TestFactoryBase {
+       14:  452:class TestFactoryImpl : public TestFactoryBase {
         -:  453: public:
-        7:  454:  virtual Test* CreateTest() { return new TestClass; }
+       14:  454:  virtual Test* CreateTest() { return new TestClass; }
         -:  455:};
         -:  456:
         -:  457:#if GTEST_OS_WINDOWS
@@ -871,7 +871,7 @@
         -:  866:
         -:  867:typedef char IsNotContainer;
         -:  868:template <class C>
-       16:  869:IsNotContainer IsContainerTest(long /* dummy */) { return '\0'; }
+       28:  869:IsNotContainer IsContainerTest(long /* dummy */) { return '\0'; }
         -:  870:
         -:  871:// EnableIf<condition>::type is void when 'Cond' is true, and
         -:  872:// undefined when 'Cond' is false.  To use SFINAE to make a function

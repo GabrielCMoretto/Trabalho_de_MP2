@@ -1,7 +1,7 @@
         -:    0:Source:/usr/include/gtest/gtest-printers.h
         -:    0:Graph:obj/funcao_teste.gcno
         -:    0:Data:obj/funcao_teste.gcda
-        -:    0:Runs:1
+        -:    0:Runs:2
         -:    0:Programs:1
         -:    1:// Copyright 2007, Google Inc.
         -:    2:// All rights reserved.
@@ -220,7 +220,7 @@
         -:  215:// Used to print a value that is not an STL-style container when the
         -:  216:// user doesn't define PrintTo() for it.
         -:  217:template <typename T>
-       16:  218:void DefaultPrintNonContainerTo(const T& value, ::std::ostream* os) {
+       28:  218:void DefaultPrintNonContainerTo(const T& value, ::std::ostream* os) {
         -:  219:  // With the following statement, during unqualified name lookup,
         -:  220:  // testing::internal2::operator<< appears as if it was declared in
         -:  221:  // the nearest enclosing namespace that contains both
@@ -247,8 +247,8 @@
         -:  242:  // impossible to define #1 (e.g. when foo is ::std, defining
         -:  243:  // anything in it is undefined behavior unless you are a compiler
         -:  244:  // vendor.).
-       16:  245:  *os << value;
-       16:  246:}
+       28:  245:  *os << value;
+       28:  246:}
         -:  247:
         -:  248:}  // namespace testing_internal
         -:  249:
@@ -337,11 +337,11 @@
         -:  332:// Used to print a non-container, non-pointer value when the user
         -:  333:// doesn't define PrintTo() for it.
         -:  334:template <typename T>
-       16:  335:void DefaultPrintTo(IsNotContainer /* dummy */,
+       28:  335:void DefaultPrintTo(IsNotContainer /* dummy */,
         -:  336:                    false_type /* is not a pointer */,
         -:  337:                    const T& value, ::std::ostream* os) {
-       16:  338:  ::testing_internal::DefaultPrintNonContainerTo(value, os);
-       16:  339:}
+       28:  338:  ::testing_internal::DefaultPrintNonContainerTo(value, os);
+       28:  339:}
         -:  340:
         -:  341:// Prints the given value using the << operator if it has one;
         -:  342:// otherwise prints the bytes in it.  This is what
@@ -355,7 +355,7 @@
         -:  350:// or there is already a << operator but it doesn't do what the user
         -:  351:// wants).
         -:  352:template <typename T>
-       16:  353:void PrintTo(const T& value, ::std::ostream* os) {
+       28:  353:void PrintTo(const T& value, ::std::ostream* os) {
         -:  354:  // DefaultPrintTo() is overloaded.  The type of its first two
         -:  355:  // arguments determine which version will be picked.  If T is an
         -:  356:  // STL-style container, the version for container will be called; if
@@ -378,8 +378,8 @@
         -:  373:  //
         -:  374:  //   PrintTo(const T& x, ...);
         -:  375:  //   PrintTo(T* x, ...);
-       16:  376:  DefaultPrintTo(IsContainerTest<T>(0), is_pointer<T>(), value, os);
-       16:  377:}
+       28:  376:  DefaultPrintTo(IsContainerTest<T>(0), is_pointer<T>(), value, os);
+       28:  377:}
         -:  378:
         -:  379:// The following list of PrintTo() overloads tells
         -:  380:// UniversalPrinter<T>::Print() how to print standard types (built-in
@@ -593,7 +593,7 @@
         -:  588:  // Note: we deliberately don't call this PrintTo(), as that name
         -:  589:  // conflicts with ::testing::internal::PrintTo in the body of the
         -:  590:  // function.
-       16:  591:  static void Print(const T& value, ::std::ostream* os) {
+       28:  591:  static void Print(const T& value, ::std::ostream* os) {
         -:  592:    // By default, ::testing::internal::PrintTo() is used for printing
         -:  593:    // the value.
         -:  594:    //
@@ -602,8 +602,8 @@
         -:  597:    // be visible here.  Since it is more specific than the generic ones
         -:  598:    // in ::testing::internal, it will be picked by the compiler in the
         -:  599:    // following statement - exactly what we want.
-       16:  600:    PrintTo(value, os);
-       16:  601:  }
+       28:  600:    PrintTo(value, os);
+       28:  601:  }
         -:  602:
         -:  603:#ifdef _MSC_VER
         -:  604:# pragma warning(pop)           // Restores the warning state.
@@ -685,9 +685,9 @@
         -:  680:template <typename T>
         -:  681:class UniversalTersePrinter {
         -:  682: public:
-       16:  683:  static void Print(const T& value, ::std::ostream* os) {
-       16:  684:    UniversalPrint(value, os);
-       16:  685:  }
+       28:  683:  static void Print(const T& value, ::std::ostream* os) {
+       28:  684:    UniversalPrint(value, os);
+       28:  685:  }
         -:  686:};
         -:  687:template <typename T>
         -:  688:class UniversalTersePrinter<T&> {
@@ -754,12 +754,12 @@
         -:  749:// (const) char pointer, this prints both the pointer and the
         -:  750:// NUL-terminated string.
         -:  751:template <typename T>
-       16:  752:void UniversalPrint(const T& value, ::std::ostream* os) {
+       28:  752:void UniversalPrint(const T& value, ::std::ostream* os) {
         -:  753:  // A workarond for the bug in VC++ 7.1 that prevents us from instantiating
         -:  754:  // UniversalPrinter with T directly.
         -:  755:  typedef T T1;
-       16:  756:  UniversalPrinter<T1>::Print(value, os);
-       16:  757:}
+       28:  756:  UniversalPrinter<T1>::Print(value, os);
+       28:  757:}
         -:  758:
         -:  759:#if GTEST_HAS_TR1_TUPLE
         -:  760:typedef ::std::vector<string> Strings;
@@ -849,10 +849,10 @@
         -:  844:}  // namespace internal
         -:  845:
         -:  846:template <typename T>
-       16:  847:::std::string PrintToString(const T& value) {
-       32:  848:  ::std::stringstream ss;
-       16:  849:  internal::UniversalTersePrinter<T>::Print(value, &ss);
-       32:  850:  return ss.str();
+       28:  847:::std::string PrintToString(const T& value) {
+       56:  848:  ::std::stringstream ss;
+       28:  849:  internal::UniversalTersePrinter<T>::Print(value, &ss);
+       56:  850:  return ss.str();
         -:  851:}
         -:  852:
         -:  853:}  // namespace testing

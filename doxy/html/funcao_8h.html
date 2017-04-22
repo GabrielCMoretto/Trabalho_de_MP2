@@ -89,8 +89,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">funcao.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>esse arquivo contém a interface do arquivo <a class="el" href="funcao_8c.html" title="esse arquivo contém a implementação da função. ">funcao.c</a>  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="funcao_8c.html">funcao.c</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for funcao.h:</div>
 <div class="dyncontent">
@@ -98,46 +102,86 @@ Include dependency graph for funcao.h:</div>
 <map name="_2home_2gabriel_2Documents_2UNB__Linux_2Trabalho__2_2Trab__2_2include_2funcao_8h" id="_2home_2gabriel_2Documents_2UNB__Linux_2Trabalho__2_2Trab__2_2include_2funcao_8h">
 </map>
 </div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="funcao_8h__dep__incl.png" border="0" usemap="#_2home_2gabriel_2Documents_2UNB__Linux_2Trabalho__2_2Trab__2_2include_2funcao_8hdep" alt=""/></div>
-<map name="_2home_2gabriel_2Documents_2UNB__Linux_2Trabalho__2_2Trab__2_2include_2funcao_8hdep" id="_2home_2gabriel_2Documents_2UNB__Linux_2Trabalho__2_2Trab__2_2include_2funcao_8hdep">
-</map>
-</div>
 </div>
 <p><a href="funcao_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aeabb22e7e2bb71f27afc09745f61149f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="funcao_8h.html#aeabb22e7e2bb71f27afc09745f61149f">converte_romano</a> (char *romano)</td></tr>
-<tr class="memdesc:aeabb22e7e2bb71f27afc09745f61149f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Faz varios nada.  <a href="#aeabb22e7e2bb71f27afc09745f61149f">More...</a><br /></td></tr>
-<tr class="separator:aeabb22e7e2bb71f27afc09745f61149f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a437108d79d6fa240ff23d5b4b029c98c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="funcao_8h.html#a437108d79d6fa240ff23d5b4b029c98c">converte_romano</a> (const char romano[])</td></tr>
+<tr class="memdesc:a437108d79d6fa240ff23d5b4b029c98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função primária para a conversão.  <a href="#a437108d79d6fa240ff23d5b4b029c98c">More...</a><br /></td></tr>
+<tr class="separator:a437108d79d6fa240ff23d5b4b029c98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7674f764c2babd495a6dfc8fa10756d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="funcao_8h.html#a7674f764c2babd495a6dfc8fa10756d8">compara</a> (int numero, int ultimo, int ultimo_numero)</td></tr>
+<tr class="memdesc:a7674f764c2babd495a6dfc8fa10756d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função auxiliar de converte_romano.  <a href="#a7674f764c2babd495a6dfc8fa10756d8">More...</a><br /></td></tr>
+<tr class="separator:a7674f764c2babd495a6dfc8fa10756d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="aeabb22e7e2bb71f27afc09745f61149f"></a>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>esse arquivo contém a interface do arquivo <a class="el" href="funcao_8c.html" title="esse arquivo contém a implementação da função. ">funcao.c</a> </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a7674f764c2babd495a6dfc8fa10756d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compara </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numero</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ultimo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ultimo_numero</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função auxiliar de converte_romano. </p>
+<p>Função auxiliar de converte_romano.</p>
+<p>Falta ainda implementar mais excessões para o código, porém o tempo é curto. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">um</td><td>número que vai ser analisado, o seu antecessor na string, e número adquirido anteriormente por essa função. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>um inteiro que satisfaz a operação da combinação de dois números. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a437108d79d6fa240ff23d5b4b029c98c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int converte_romano </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>romano</em></td><td>)</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>romano</em>[]</td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Faz varios nada. </p>
-<p>Especificamente, retornar 0, que eh nada. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Função primária para a conversão. </p>
+<p>Função primária para a conversão.</p>
+<p>O algoritmo lê a string de trás para frente e identifica a letra, depois, ele chama a função compara para fazer uma operação satisfatória em como se lê os números romanos. Ele também identifica se há uma letra diferente das aceitas, nesse caso, a função retorna -1. A função também retorna -1 caso o número seja maior que 3000 ou menor que zero. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">romano</td><td>uma string qualquer que faz nada. </td></tr>
+    <tr><td class="paramname">uma</td><td>string qualquer. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>um inteiro que significa nada </dd></dl>
-<p>&lt;Faz algo, eu acho </p>
+<dl class="section return"><dt>Returns</dt><dd>um inteiro equivalente em romano. </dd></dl>
 
 </div>
 </div>

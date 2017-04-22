@@ -3,7 +3,7 @@
 #include"funcao.c"
 #include<gtest/gtest.h>
 
-TEST(converte,excessoes){
+TEST(converte,excessoes){/**< testes para verificar se a função aceita ou não qualquer string */
 	EXPECT_EQ(-1,converte_romano("ABCDE"));
 	EXPECT_EQ(-1,converte_romano("FGHIJ"));
 	EXPECT_EQ(-1,converte_romano("KLNMO"));
@@ -14,7 +14,7 @@ TEST(converte,excessoes){
 	EXPECT_EQ(-1,converte_romano("BUMBA"));
 }
 
-TEST(converte,numeros_errados){
+TEST(converte,numeros_errados){/**< testes para verificar se a função aceita ou não qualquer números inválidos */
 	EXPECT_EQ(-1,converte_romano("XXXIXIX"));
 	EXPECT_EQ(-1,converte_romano("MXIMXI"));
 	EXPECT_EQ(-1,converte_romano("XMICMCIX"));
@@ -25,7 +25,7 @@ TEST(converte,numeros_errados){
 	EXPECT_EQ(-1,converte_romano("MCMLMC"));
 }
 
-TEST(converte,unidades){
+TEST(converte,unidades){/**< testes para verificar se a função converte corretamente unidades */
 	EXPECT_EQ(1,converte_romano("I"));
 	EXPECT_EQ(2,converte_romano("II"));
 	EXPECT_EQ(3,converte_romano("III"));
@@ -37,7 +37,7 @@ TEST(converte,unidades){
 	EXPECT_EQ(9,converte_romano("IX"));
 }
 
-TEST(converte,dezenas){
+TEST(converte,dezenas){/**< testes para verificar se a função converte corretamente dezenas */
 	EXPECT_EQ(10,converte_romano("X"));
 	EXPECT_EQ(20,converte_romano("XX"));
 	EXPECT_EQ(30,converte_romano("XXX"));
@@ -49,7 +49,7 @@ TEST(converte,dezenas){
 	EXPECT_EQ(90,converte_romano("XC"));
 }
 
-TEST(converte,centenas){
+TEST(converte,centenas){/**< testes para verificar se a função converte corretamente centenas */
 	EXPECT_EQ(100,converte_romano("C"));
 	EXPECT_EQ(200,converte_romano("CC"));
 	EXPECT_EQ(300,converte_romano("CCC"));
@@ -61,13 +61,13 @@ TEST(converte,centenas){
 	EXPECT_EQ(900,converte_romano("CM"));
 }
 
-TEST(converte,milhares){
+TEST(converte,milhares){/**< testes para verificar se a função converte corretamente milhares */
 	EXPECT_EQ(1000,converte_romano("M"));
 	EXPECT_EQ(2000,converte_romano("MM"));
 	EXPECT_EQ(3000,converte_romano("MMM"));
 }
 
-TEST(converte,aleatorios){
+TEST(converte,aleatorios){/**< testes para verificar se a função converte corretamente números aleatórios */
 	EXPECT_EQ(18,converte_romano("XVIII"));
 	EXPECT_EQ(34,converte_romano("XXXIV"));
 	EXPECT_EQ(41,converte_romano("XLI"));
@@ -94,3 +94,8 @@ int main(int argc, char **argv){
 	::testing::InitGoogleTest(&argc, argv); 
 	return RUN_ALL_TESTS(); 
 }
+
+/**
+	@file
+	@brief esse arquivo contém os testes.
+*/
