@@ -1,0 +1,75 @@
+        -:    0:Source:funcao.c
+        -:    0:Graph:obj/funcao_teste.gcno
+        -:    0:Data:obj/funcao_teste.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    0:Source is newer than graph
+        -:    1:#include<stdio.h>
+        -:    2:#include<stdlib.h>
+        -:    3:#include<string.h>
+        -:    4:
+      250:    5:int compara(int numero, int ultimo, int ultimo_numero){
+      250:    6:	if(ultimo>numero)
+       35:    7:		return ultimo_numero-numero;
+        -:    8:	else
+      215:    9:		return ultimo_numero+numero;
+        -:   10:}
+        -:   11:/**
+        -:   12:	Retorna um inteiro baseado em um numero romano.
+        -:   13:	@param romano uma string qualquer.
+        -:   14:	@return um inteiro equivalente em romano.
+        -:   15:*/
+       66:   16:int converte_romano(const char romano[]){
+       66:   17:	int i=0;
+       66:   18:	int num_anterior=0;
+       66:   19:	int numero=0;	
+      566:   20:	while(romano[i]!=0){
+      258:   21:		if((romano[i]!='I')&&(romano[i]!='V')&&(romano[i]!='X')&&(romano[i]!='L')&&(romano[i]!='C')&&(romano[i]!='D')&&(romano[i]!='M'))
+        8:   22:			return -1;
+        -:   23:		else
+      250:   24:			i++;
+        -:   25:		}
+      308:   26:	for(i=strlen(romano)-1;i>=0;i--){
+      250:   27:		switch(romano[i]){
+        -:   28:			
+        -:   29:			case'I':
+       58:   30:				numero=compara(1,num_anterior,numero);
+       58:   31:				num_anterior=1;
+       58:   32:				break;
+        -:   33:			case'V':
+       17:   34:				numero=compara(5,num_anterior,numero);
+       17:   35:				num_anterior=5;
+       17:   36:				break;
+        -:   37:			case'X':
+       61:   38:				numero=compara(10,num_anterior,numero);
+       61:   39:				num_anterior=10;
+       61:   40:				break;
+        -:   41:			case'L':
+       17:   42:				numero=compara(50,num_anterior,numero);
+       17:   43:				num_anterior=50;
+       17:   44:				break;
+        -:   45:			case'C':
+       51:   46:				numero=compara(100,num_anterior,numero);
+       51:   47:				num_anterior=100;
+       51:   48:				break;
+        -:   49:			case'D':
+       15:   50:				numero=compara(500,num_anterior,numero);
+       15:   51:				num_anterior=500;
+       15:   52:				break;
+        -:   53:			case'M':
+       31:   54:				numero=compara(1000,num_anterior,numero);
+       31:   55:				num_anterior=1000;
+       31:   56:				break;	
+        -:   57:		}	
+        -:   58:	}
+       58:   59:	if(numero>3000)
+        -:   60:		return -1
+        -:   61:	else
+        -:   62:		return numero;
+        -:   63:}
+        -:   64:
+        -:   65:
+        -:   66:/**
+        -:   67:	@file
+        -:   68:	@brief esse arquivo contém a implementação da função.
+        -:   69:*/

@@ -1,0 +1,12 @@
+digraph "/home/gabriel/Documents/UNB_Linux/Trabalho_2/Trab_2" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_7bad05d4a54dd8a37857566423fb6b6b {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_7bad05d4a54dd8a37857566423fb6b6b.html"];
+    dir_7bad05d4a54dd8a37857566423fb6b6b [shape=plaintext label="Trab_2"];
+    dir_5a87bf7b9c06b428ac363fc390558d71 [shape=box label="include" color="black" fillcolor="white" style="filled" URL="dir_5a87bf7b9c06b428ac363fc390558d71.html"];
+    dir_84c0edc67eb70353d8bb3d220ccb73b8 [shape=box label="src" color="black" fillcolor="white" style="filled" URL="dir_84c0edc67eb70353d8bb3d220ccb73b8.html"];
+  }
+  dir_84c0edc67eb70353d8bb3d220ccb73b8->dir_5a87bf7b9c06b428ac363fc390558d71 [headlabel="1", labeldistance=1.5 headhref="dir_000002_000001.html"];
+}

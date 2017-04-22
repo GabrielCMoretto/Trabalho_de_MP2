@@ -3,15 +3,15 @@
 #include"funcao.c"
 #include<gtest/gtest.h>
 
-TEST(converte,excessoes){/**/
-	EXPECT_EQ(-1,converte_romano("ABDE"));
-	EXPECT_EQ(-1,converte_romano("FGHJ"));
-	EXPECT_EQ(-1,converte_romano("KNOP"));
-	EXPECT_EQ(-1,converte_romano("QRST"));
-	EXPECT_EQ(-1,converte_romano("UWXYZ"));
+TEST(converte,excessoes){
+	EXPECT_EQ(-1,converte_romano("ABCDE"));
+	EXPECT_EQ(-1,converte_romano("FGHIJ"));
+	EXPECT_EQ(-1,converte_romano("KLNMO"));
+	EXPECT_EQ(-1,converte_romano("PQRST"));
+	EXPECT_EQ(-1,converte_romano("UVWXYZ"));
 	EXPECT_EQ(-1,converte_romano("ROGE"));
 	EXPECT_EQ(-1,converte_romano("BEBA"));
-	EXPECT_EQ(-1,converte_romano("BUNBA"));
+	EXPECT_EQ(-1,converte_romano("BUMBA"));
 }
 
 TEST(converte,numeros_errados){

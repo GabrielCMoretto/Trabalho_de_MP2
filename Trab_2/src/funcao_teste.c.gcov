@@ -1,0 +1,101 @@
+        -:    0:Source:funcao_teste.c
+        -:    0:Graph:obj/funcao_teste.gcno
+        -:    0:Data:obj/funcao_teste.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include<stdio.h>
+        -:    2:#include<stdlib.h>
+        -:    3:#include"funcao.c"
+        -:    4:#include<gtest/gtest.h>
+        -:    5:
+        5:    6:TEST(converte,excessoes){
+        1:    7:	EXPECT_EQ(-1,converte_romano("ABCDE"));
+        1:    8:	EXPECT_EQ(-1,converte_romano("FGHIJ"));
+        1:    9:	EXPECT_EQ(-1,converte_romano("KLNMO"));
+        1:   10:	EXPECT_EQ(-1,converte_romano("PQRST"));
+        1:   11:	EXPECT_EQ(-1,converte_romano("UVWXYZ"));
+        1:   12:	EXPECT_EQ(-1,converte_romano("ROGE"));
+        1:   13:	EXPECT_EQ(-1,converte_romano("BEBA"));
+        1:   14:	EXPECT_EQ(-1,converte_romano("BUMBA"));
+        1:   15:}
+        -:   16:
+        5:   17:TEST(converte,numeros_errados){
+        1:   18:	EXPECT_EQ(-1,converte_romano("XXXIXIX"));
+        1:   19:	EXPECT_EQ(-1,converte_romano("MXIMXI"));
+        1:   20:	EXPECT_EQ(-1,converte_romano("XMICMCIX"));
+        1:   21:	EXPECT_EQ(-1,converte_romano("MLXMCD"));
+        1:   22:	EXPECT_EQ(-1,converte_romano("MXLMXCIIV"));
+        1:   23:	EXPECT_EQ(-1,converte_romano("MIXMIMLCV"));
+        1:   24:	EXPECT_EQ(-1,converte_romano("IIIXMCC"));
+        1:   25:	EXPECT_EQ(-1,converte_romano("MCMLMC"));
+        1:   26:}
+        -:   27:
+        5:   28:TEST(converte,unidades){
+        1:   29:	EXPECT_EQ(1,converte_romano("I"));
+        1:   30:	EXPECT_EQ(2,converte_romano("II"));
+        1:   31:	EXPECT_EQ(3,converte_romano("III"));
+        1:   32:	EXPECT_EQ(4,converte_romano("IV"));
+        1:   33:	EXPECT_EQ(5,converte_romano("V"));
+        1:   34:	EXPECT_EQ(6,converte_romano("VI"));
+        1:   35:	EXPECT_EQ(7,converte_romano("VII"));
+        1:   36:	EXPECT_EQ(8,converte_romano("VIII"));
+        1:   37:	EXPECT_EQ(9,converte_romano("IX"));
+        1:   38:}
+        -:   39:
+        5:   40:TEST(converte,dezenas){
+        1:   41:	EXPECT_EQ(10,converte_romano("X"));
+        1:   42:	EXPECT_EQ(20,converte_romano("XX"));
+        1:   43:	EXPECT_EQ(30,converte_romano("XXX"));
+        1:   44:	EXPECT_EQ(40,converte_romano("XL"));
+        1:   45:	EXPECT_EQ(50,converte_romano("L"));
+        1:   46:	EXPECT_EQ(60,converte_romano("LX"));
+        1:   47:	EXPECT_EQ(70,converte_romano("LXX"));
+        1:   48:	EXPECT_EQ(80,converte_romano("LXXX"));
+        1:   49:	EXPECT_EQ(90,converte_romano("XC"));
+        1:   50:}
+        -:   51:
+        5:   52:TEST(converte,centenas){
+        1:   53:	EXPECT_EQ(100,converte_romano("C"));
+        1:   54:	EXPECT_EQ(200,converte_romano("CC"));
+        1:   55:	EXPECT_EQ(300,converte_romano("CCC"));
+        1:   56:	EXPECT_EQ(400,converte_romano("CD"));
+        1:   57:	EXPECT_EQ(500,converte_romano("D"));
+        1:   58:	EXPECT_EQ(600,converte_romano("DC"));
+        1:   59:	EXPECT_EQ(700,converte_romano("DCC"));
+        1:   60:	EXPECT_EQ(800,converte_romano("DCCC"));
+        1:   61:	EXPECT_EQ(900,converte_romano("CM"));
+        1:   62:}
+        -:   63:
+        5:   64:TEST(converte,milhares){
+        1:   65:	EXPECT_EQ(1000,converte_romano("M"));
+        1:   66:	EXPECT_EQ(2000,converte_romano("MM"));
+        1:   67:	EXPECT_EQ(3000,converte_romano("MMM"));
+        1:   68:}
+        -:   69:
+        5:   70:TEST(converte,aleatorios){
+        1:   71:	EXPECT_EQ(18,converte_romano("XVIII"));
+        1:   72:	EXPECT_EQ(34,converte_romano("XXXIV"));
+        1:   73:	EXPECT_EQ(41,converte_romano("XLI"));
+        1:   74:	EXPECT_EQ(56,converte_romano("LVI"));
+        1:   75:	EXPECT_EQ(97,converte_romano("XCVII"));
+        1:   76:	EXPECT_EQ(132,converte_romano("CXXXII"));
+        1:   77:	EXPECT_EQ(217,converte_romano("CCXVII"));
+        1:   78:	EXPECT_EQ(324,converte_romano("CCCXXIV"));
+        1:   79:	EXPECT_EQ(477,converte_romano("CDLXXVII"));
+        1:   80:	EXPECT_EQ(531,converte_romano("DXXXI"));
+        1:   81:	EXPECT_EQ(689,converte_romano("DCLXXXIX"));
+        1:   82:	EXPECT_EQ(725,converte_romano("DCCXXV"));
+        1:   83:	EXPECT_EQ(863,converte_romano("DCCCLXIII"));
+        1:   84:	EXPECT_EQ(961,converte_romano("CMLXI"));
+        1:   85:	EXPECT_EQ(1307,converte_romano("MCCCVII"));
+        1:   86:	EXPECT_EQ(1422,converte_romano("MCDXXII"));
+        1:   87:	EXPECT_EQ(1666,converte_romano("MDCLXVI"));
+        1:   88:	EXPECT_EQ(1711,converte_romano("MDCCXI"));
+        1:   89:	EXPECT_EQ(2313,converte_romano("MMCCCXIII"));
+        1:   90:	EXPECT_EQ(2771,converte_romano("MMDCCLXXI"));	
+        1:   91:}
+        -:   92:
+        1:   93:int main(int argc, char **argv){
+        1:   94:	::testing::InitGoogleTest(&argc, argv); 
+        1:   95:	return RUN_ALL_TESTS(); 
+        3:   96:}
