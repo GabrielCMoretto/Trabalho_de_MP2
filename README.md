@@ -9,3 +9,5 @@ Coisas importantes a se saber:
 3-A documentaçao do doxygen está em doxy/html/files.html
 4-o gcov está na pasta src
 5-meu repositorio no github eh o endereço https://github.com/GabrielCMoretto/Trabalho_de_MP2
+
+para compilar o programa, abra o terminal na pasta src e digite o comando "make" e o programa será compilado, caso queira executar o programa, basta digitar o comando "./Trabalho_2"
